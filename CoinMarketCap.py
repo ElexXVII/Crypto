@@ -12,6 +12,7 @@ def get(name):
     print("Rank : "+coin["rank"])
     print("Price : "+coin["price_btc"]+" Ƀ")
     print("Price : "+coin["price_usd"]+" $")
+    print("Price : "+coin["price_eur"]+" €")
 
     for i in [coin["percent_change_1h"],coin["percent_change_24h"],coin["percent_change_7d"]]:
         if i!=None:
