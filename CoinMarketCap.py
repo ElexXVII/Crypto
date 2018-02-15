@@ -14,11 +14,21 @@ def get(name):
     print("Price : "+coin["price_usd"]+" $")
     print("Price : "+coin["price_eur"]+" €")
 
-    for i in [coin["percent_change_1h"],coin["percent_change_24h"],coin["percent_change_7d"]]:
-        if i!=None:
-            print("Change (1h) : "+i+" %")
+    for i in ["1h","24h","7d"]:
+
+        v = [coin["percent_change_1h"],coin["percent_change_24h"],coin["percent_change_7d"]]
+
+        if i=="1h":
+            k=v[0]
+        if i=="24h":
+            k=v[1]
+        if i=="4d":
+            k=v[2]
+
+        if k!=None:
+            print("Change ("+i+") : "+k+" %")
         else:
-            print("Change (1h) : N/A")
+            print("Change ("+i+") : N/A")
     print("=======================")
 
     #return coin
